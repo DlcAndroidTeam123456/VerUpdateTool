@@ -17,7 +17,7 @@ public class PackageReplacedReceiver extends BroadcastReceiver {
 //            spm("onReceive PACKAGE_REPLACED："+intent.getDataString());
             if (intent.getDataString().contains(context.getPackageName())) {
                 spm("from my app");
-                SilentUpdateUtil.getInstance().setUpdate(true);
+                SilentUpdateUtil.getInstance().setUpdate();
             }else {
                 spm("not from my app");
             }
