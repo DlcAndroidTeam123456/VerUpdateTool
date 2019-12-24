@@ -31,17 +31,10 @@ public class SilentUpdateUtil {
 //        return isUpdate;
 //    }
 
-    void setUpdate(boolean update) {
-        isUpdate = update;
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (silentUpdateListener != null && isUpdate) {
-                    silentUpdateListener.onUpdateSuccess();
-                }
-            }
-        }, 1000);
-
+    void setUpdate() {
+        if (silentUpdateListener != null) {
+            silentUpdateListener.onUpdateSuccess();
+        }
     }
 
     /**
